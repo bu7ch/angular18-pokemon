@@ -25,6 +25,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng/ressources/saga-blue/theme.css",
+              "node_modules/primeng/ressources/primeng.min.css",
+              "node_modules/primeicons//primeicons.css",
               "src/styles.css"
             ],
             "scripts": []
