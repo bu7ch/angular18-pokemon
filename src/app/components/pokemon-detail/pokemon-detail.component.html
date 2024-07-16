@@ -1,1 +1,11 @@
-<p>pokemon-detail works!</p>
+<section class="section">
+  <div class="container" *ngIf="pokemon">
+    <h1 class="title">{{ pokemon.name }}</h1>
+    <div class="content">
+      <p><strong>Height:</strong> {{ pokemon.height }}</p>
+      <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
+      <p><strong>Types:</strong> <span *ngFor="let type of pokemon.types">{{ type.type.name }}</span></p>
+      <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+    </div>
+  </div>
+</section>

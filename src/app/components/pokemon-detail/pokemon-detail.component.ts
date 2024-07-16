@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-pokemon-detail',
-  standalone: true,
-  imports: [],
   templateUrl: './pokemon-detail.component.html',
-  styleUrl: './pokemon-detail.component.css'
+  styleUrls: ['./pokemon-detail.component.css']
 })
-export class PokemonDetailComponent {
+export class PokemonDetailComponent implements OnInit {
+  pokemon: any;
 
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+
+  ngOnInit() {
+    const name = this.route.snapshot.paramMap.get('name');
+    this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${name}`).subscribe(data => {
+      this.pokemon = data;
+    });
+  }
 }

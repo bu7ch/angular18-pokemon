@@ -6,6 +6,6 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
 
 export const routes: Routes = [
   { path: '', redirectTo: '/pokedex', pathMatch: 'full' },
-  { path: '', component: PokedexComponent },
+  { path: 'pokedex', component: PokedexComponent },
   { path: 'pokemon/:name', component: PokemonDetailComponent}
 ];

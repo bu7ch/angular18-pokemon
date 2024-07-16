@@ -19,9 +19,11 @@ export class PokedexComponent implements OnInit {
     const offset = event.first || 0;
     this.pokemonService.getPokemons(20, offset).subscribe((data: any) => {
       this.pokemons = data.results;
+      console.log(this.pokemons)
     });
   }
 
+  selectPokemon(name: string) {}
   // getPokemonImageUrl(pokemon: any): string {
   //   const id = pokemon.url.split('/')[6];
   //   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;

@@ -1,16 +1,21 @@
-<p-table [value]="pokemons">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Name</th>
-      <th>Details</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-pokemon>
-    <tr>
-      <td>{{pokemon.name}}</td>
-      <td>
-        <!-- <button (click)="selectPokemon(pokemon.name)">Details</button> -->
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Pokedex</h1>
+    <table class="table is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of pokemons">
+          <td>{{ pokemon.name }}</td>
+          <td>
+            <button class="button is-info" (click)="selectPokemon(pokemon.name)">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

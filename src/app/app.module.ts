@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableModule } from 'primeng/table';
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { CommonModule } from '@angular/common';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    CommonModule,
     TableModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [provideHttpClient()],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class AppModule { }
